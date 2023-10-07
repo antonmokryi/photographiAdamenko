@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>photographe IRINA ADAMENKO</title>
+    <link rel="stylesheet" href="portfolioStyle.css" />
+    <link rel="stylesheet" href="./чернетка/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="burger__menu">
+        <ul>
+          <a href="../чернетка/index.html">Home</a>
+          <a href="../portfolio.html">Portfolio</a>
+          <li class="btnPrice">Price</li>
+          <li class="btnContact">Contact</li>
+        </ul>
+      </div>
+
+      <header class="headerPortfolio">
+        <div class="header__logo">
+          <h1 class="header__logo_h1">IRINA ADAMENKO</h1>
+          <p class="header__logo_p">photographe de famille</p>
+        </div>
+
+        <div class="header__menu_portfolio">
+          <ul>
+            <a href="../чернетка/index.html">Home</a>
+            <!-- <a href="../portfolio.html">Portfolio</a>
+            <li class="btnPrice">Price</li>
+            <li class="btnContact">Contact</li> -->
+          </ul>
+        </div>
+        <div class="burger-container">
+          <div class="header__burger_portfolio">
+            <span class="header__burger_long"></span>
+            <span class="header__burger_long"></span>
+            <span class="header__burger_long"></span>
+          </div>
+        </div>
+      </header>
+
+      <div class="portfolio">
+        <div class="portfolio__header">
+          <h1 class="portfolio__header_h1">Portfolio</h1>
+        </div>
+
+        <div class="portfolio__categories">
+          <ul>
+            <li class="all category-item" data-category="all">All</li>
+            <li class="category category-item" data-category="wedding">
+              Wedding
+            </li>
+            <li class="category category-item" data-category="family">
+              Family
+            </li>
+            <li class="category category-item" data-category="beremennost">
+              BEremennost
+            </li>
+            <li class="category category-item" data-category="love">Love</li>
+          </ul>
+        </div>
+
+        <style>
+          swiper-container {
+            z-index: 1;
+            display: flex;
+            position: absolute;
+            z-index: 3;
+            top: 0;
+            left: 0;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+          }
+          .swiper-close {
+            display: flex;
+            justify-content: center;
+            z-index: 5;
+            border-radius: 50%;
+            border: 1px solid white;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: fixed;
+            top: 30px;
+            right: 30px;
+          }
+          .swiper-close_btn {
+            color: rgb(0, 0, 0);
+            font-weight: 500;
+            font-size: 20px;
+            margin-top: -4px;
+          }
+
+          swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #13121272;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .swiper-item {
+            display: none;
+            justify-content: center;
+            align-items: start;
+          }
+
+          swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        </style>
+        <!-- <div class="swiper-item">
+          <div class="swiper-close">
+            <button class="swiper-close_btn">x</button>
+          </div>
+        <swiper-container dat="1" class="mySwiper" pagination="true" pagination-type="fraction">
+          <swiper-slide><img src="./img/family/photo_11_2023-09-19_12-18-08.jpg" alt=""></swiper-slide>
+          <swiper-slide><img src="./img/love/photo_13_2023-09-19_12-15-18.jpg" alt=""></swiper-slide>
+          <swiper-slide><img src="./img/love/photo_13_2023-09-19_12-15-18.jpg" alt=""></swiper-slide>
+          <swiper-slide><img src="./img/wedding/photo_4_2023-09-19_12-13-10.jpg" alt=""></swiper-slide>
+          <swiper-slide>Slide 5</swiper-slide>
+          <swiper-slide>Slide 6</swiper-slide>
+          <swiper-slide>Slide 7</swiper-slide>
+          <swiper-slide>Slide 8</swiper-slide>
+          <swiper-slide>Slide 9</swiper-slide>
+        </swiper-container>
+      </div> -->
+
+        <div class="portfolio-items">
+          <div data-id="1" data-category="wedding" class="portfolio-item">
+            <div class="portfolio-item_img">
+              <img src="./img/wedding/photo_6_2023-09-19_12-13-10.jpg" alt="" />
+            </div>
+            <h2 class="portfolio-item_name">Valeria & Oleg</h2>
+            <div class="swiper-item">
+              <div class="swiper-close">
+                <button class="swiper-close_btn">x</button>
+              </div>
+              <swiper-container
+                dat="1"
+                class="mySwiper"
+                pagination="true"
+                pagination-type="fraction"
+              >
+                <swiper-slide
+                  ><img
+                    src="./img/family/photo_11_2023-09-19_12-18-08.jpg"
+                    alt=""
+                /></swiper-slide>
+                <swiper-slide
+                  ><img
+                    src="./img/love/photo_13_2023-09-19_12-15-18.jpg"
+                    alt=""
+                /></swiper-slide>
+                <swiper-slide
+                  ><img
+                    src="./img/love/photo_13_2023-09-19_12-15-18.jpg"
+                    alt=""
+                /></swiper-slide>
+                <swiper-slide
+                  ><img
+                    src="./img/wedding/photo_4_2023-09-19_12-13-10.jpg"
+                    alt=""
+                /></swiper-slide>
+                
+              </swiper-container>
+            </div>
+          </div>
+
+          <div data-category="family" class="portfolio-item">
+            <div class="portfolio-item_img">
+              <img src="./img/wedding/SWIP2.jpg" alt="" />
+            </div>
+            <h2 class="portfolio-item_name">Valeria & Oleg</h2>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-item_img">
+              <img src="./img/wedding/SWIP.jpg" alt="" />
+            </div>
+            <h2 class="portfolio-item_name">Valeria & Oleg</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      
+
+      for (
+        let i = 0;
+        i < document.querySelectorAll(".portfolio-item").length;
+        i++
+      ) {
+        document
+          .querySelectorAll(".portfolio-item")
+          [i].addEventListener("click", (e) => {
+           if (!e.target.classList.contains('swiper-close_btn')) {
+            document
+              .querySelectorAll(".portfolio-item")
+              [i].querySelector(".swiper-item").style.display = "flex";
+           }
+            
+            
+          
+          });
+      }
+
+      document.querySelector('.swiper-close').addEventListener('click', ()=>{
+        // nada sdelat for()
+        document.querySelector('.swiper-item').style.display = "none"
+      })
+
+      let category = document.querySelectorAll(".category");
+      // let data_category = document.querySelectorAll('[data-category]');
+      for (let i = 0; i < category.length; i++) {
+        category[i].addEventListener("click", () => {
+          let portfolio_item = document.querySelectorAll(".portfolio-item");
+          for (let i = 0; i < portfolio_item.length; i++) {
+            portfolio_item[i].style.display = "none";
+          }
+          let activeCategory = category[i].dataset.category;
+          for (let i = 0; i < portfolio_item.length; i++) {
+            if (portfolio_item[i].dataset.category == activeCategory) {
+              portfolio_item[i].style.display = "flex";
+            } else if (portfolio_item[5].dataset.category == activeCategory) {
+              portfolio_item[i].style.display = "flex";
+            }
+          }
+        });
+      }
+
+      document.querySelector(".all").addEventListener("click", () => {
+        let portfolio_item = document.querySelectorAll(".portfolio-item");
+        for (let i = 0; i < portfolio_item.length; i++) {
+          portfolio_item[i].style.display = "flex";
+        }
+      });
+
+      let category_item = document.querySelectorAll(".category-item");
+      for (i = 0; i < category_item.length; i++) {
+        category_item[i].addEventListener("click", (e) => {
+          for (j = 0; j < category_item.length; j++) {
+            category_item[j].classList.remove("category-item_active");
+          }
+          e.target.classList.add("category-item_active");
+        });
+      }
+    </script>
+    <!-- <script src="./чернетка/js.js">
+            document.querySelector('.header__burger').addEventListener('click', ()=>{
+           document.querySelector('.burger__menu').classList.toggle('active')
+      })
+    </script> -->
+    <script src="./backend/public/js/portfolio.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
+  </body>
+</html>

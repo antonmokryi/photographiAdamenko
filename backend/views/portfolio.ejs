@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>photographe IRINA ADAMENKO</title>
+    <link rel="stylesheet" href="/css/portfolio.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- <div class=" burger__menu">
+        <ul>
+          <a href="../чернетка/index.html">Home</a>
+            <a href="../portfolio.html">Portfolio</a>
+            <li class="btnPrice">Price</li>
+            <li class="btnContact">Contact</li>
+        </ul>
+      </div> -->
+
+      <header class="headerPortfolio">
+        <div class="header__logo">
+          <h1 class="header__logo_h1">IRINA ADAMENKO</h1>
+          <p class="header__logo_p">photographe</p>
+        </div>
+
+        <div class="header__menu_portfolio">
+          <ul>
+            <a ref="index" href="/">la maison</a>
+          </ul>
+        </div>
+        <div class="burger-container">
+          <div class="header__burger_portfolio">
+            <span class="header__burger_long"></span>
+            <span class="header__burger_long"></span>
+            <span class="header__burger_long"></span>
+          </div>
+        </div>
+      </header>
+
+      <div class="portfolio">
+        <div
+          class="portfolio__header"
+          style="background-image: url('<%= data.portfolioTittleImg %>')"
+        >
+          <h1 class="portfolio__header_h1">Portefeuille</h1>
+        </div>
+
+        <div class="portfolio__categories">
+          <ul>
+            <li class="all category-item" data-category="all">Toute</li>
+            <li class="category category-item" data-category="wedding">
+              Mariage
+            </li>
+            <li class="category category-item" data-category="family">
+              Famille
+            </li>
+            <li class="category category-item" data-category="grossess">
+              Grossess
+            </li>
+            <li class="category category-item" data-category="love">Couple</li>
+          </ul>
+        </div>
+
+        <div class="portfolio-items">
+          <% for ( let i = 0; i < data.swiper.length; i++) { %>
+
+          <div
+            data-id="1"
+            data-category="<%= data.swiper[i].category %>"
+            class="portfolio-item"
+          >
+            <div class="portfolio-item_img">
+              <img src="<%= data.swiper[i].mainImg %>" alt="" />
+            </div>
+            <h2 class="portfolio-item_name"><%= data.swiper[i].title %></h2>
+            <div class="swiper-item">
+              <div class="swiper-close">
+                <button class="swiper-close_btn">x</button>
+              </div>
+              <swiper-container
+                dat="1"
+                class="mySwiper"
+                pagination="true"
+                pagination-type="fraction"
+              >
+                <% for (let j = 0; j < data.swiper[i].img.length; j++) { %>
+
+                <swiper-slide
+                  ><img src="<%= data.swiper[i].img[j] %>" alt=""
+                /></swiper-slide>
+                <% } %>
+              </swiper-container>
+            </div>
+          </div>
+
+          <% } %>
+
+          <!-- <% for ( let i = 0; i < data.swiper.length; i++) { %>
+          <div
+            data-category="<%= data.swiper[i].category %>"
+            class="portfolio-item"
+          >
+            <div class="swiper-item">
+              <div class="swiper-close">
+                <button class="swiper-close_btn">x</button>
+              </div>
+              <swiper-container
+                class="mySwiper"
+                pagination="true"
+                pagination-type="fraction"
+              >
+                <% for (let j = 0; j < data.swiper[i].img.length; j++) { %>
+                <swiper-slide
+                  ><img src="<%= data.swiper[i].img[j] %>" alt=""
+                /></swiper-slide>
+                <% } %> 
+              </swiper-container>
+            </div>
+
+            <div class="portfolio-item_img">
+              <img src="<%= data.swiper[i].mainImg %>" alt="" />
+            </div>
+            <h2 class="portfolio-item_name"><%= data.swiper[i].title %></h2>
+          </div>
+          <% } %> -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      for (
+        let i = 0;
+        i < document.querySelectorAll(".portfolio-item").length;
+        i++
+      ) {
+        document
+          .querySelectorAll(".portfolio-item")
+          [i].addEventListener("click", (e) => {
+            if (!e.target.classList.contains("swiper-close_btn")) {
+              document
+                .querySelectorAll(".portfolio-item")
+                [i].querySelector(".swiper-item").style.display = "flex";
+            }
+          });
+      }
+
+      for (
+        let i = 0;
+        i < document.querySelectorAll(".swiper-close").length;
+        i++
+      ) {
+        // alert(1)
+        document
+          .querySelectorAll(".swiper-close")
+          [i].addEventListener("click", () => {
+            // nada sdelat for()
+            document.querySelectorAll(".swiper-item")[i].style.display = "none";
+          });
+      }
+
+      let category = document.querySelectorAll(".category");
+      // let data_category = document.querySelectorAll('[data-category]');
+      for (let i = 0; i < category.length; i++) {
+        category[i].addEventListener("click", () => {
+          let portfolio_item = document.querySelectorAll(".portfolio-item");
+          for (let i = 0; i < portfolio_item.length; i++) {
+            portfolio_item[i].style.display = "none";
+          }
+          let activeCategory = category[i].dataset.category;
+          for (let i = 0; i < portfolio_item.length; i++) {
+            if (portfolio_item[i].dataset.category == activeCategory) {
+              portfolio_item[i].style.display = "flex";
+            } else if (portfolio_item[i].dataset.category == activeCategory) {
+              portfolio_item[i].style.display = "flex";
+            }
+          }
+        });
+      }
+
+      document.querySelector(".all").addEventListener("click", () => {
+        let portfolio_item = document.querySelectorAll(".portfolio-item");
+        for (let i = 0; i < portfolio_item.length; i++) {
+          portfolio_item[i].style.display = "flex";
+        }
+      });
+
+      let category_item = document.querySelectorAll(".category-item");
+      for (i = 0; i < category_item.length; i++) {
+        category_item[i].addEventListener("click", (e) => {
+          for (j = 0; j < category_item.length; j++) {
+            category_item[j].classList.remove("category-item_active");
+          }
+          e.target.classList.add("category-item_active");
+        });
+      }
+
+      document
+        .querySelector(".header__burger")
+        .addEventListener("click", () => {
+          document.querySelector(".burger__menu").classList.toggle("active");
+        });
+    </script>
+    <!-- <script src="./чернетка/js.js"></script> -->
+    <script src="/js/portfolio.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
+  </body>
+</html>

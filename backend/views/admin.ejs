@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header>
+      
+    </header>
+    <main>
+      <div class="container">
+        <!-- CRUD create read update delete -->
+        <form
+          method="post"
+          id="uploadForm"
+          ref="uploadForm"
+          action="/upload"
+          enctype="multipart/form-data"
+          class="form"
+        >
+
+       
+          <div class="block">
+            <div class="logo">
+              <h1>IRINA ADAMENKO photographer</h1>
+              <!-- <h2>Admin page</h2> -->
+            </div>
+            <h1>Зміни на головній сторінці</h1>
+            <div class="block-item">
+              <div class="block-item_name">Додати фото до слайдеру</div>
+              <input name="file" type="file" class="addPhoto" value="Обрати" />
+              <button class="btnAdd">Додати</button>
+            </div>
+            <div class="block-item">
+              <div class="block-item_name">Зміна фото в розділі "про мене" </div>
+              <input name="file" type="file" class="addPhoto" value="Обрати" />
+              <button class="btnAdd">Змінити</button>
+            </div>
+            <div class="block-item">
+              <div class="block-item_name">Змінити текст в розділі "про мене" </div>
+              
+              <textarea name="text" type="text" class="addPhoto" ><%= aboutMe %></textarea>
+              <button class="btnAdd">Змінити</button>
+            </div>
+            <div class="block-item">
+              <div class="block-item_name">Змінити номер телефону </div>
+              <input name="file" type="file" class="addPhoto" value="" />
+              <button class="btnAdd">Змінити</button>
+            </div>
+            <div class="block-item">
+              <div class="block-item_name">Зміна поштової скриньки </div>
+              <input name="file" type="text" class="addPhoto" value="<%= data.email%>" />
+              <button class="btnAdd">Змінити</button>
+            </div>
+
+            <h1>Зміни в розділі "портфоліо"</h1>
+
+            <div class="block-item portf">
+               <div class="block-item_name">Додати в портфоліо блок з фото</div>
+               <div class="item-icon">
+                <h2>Обрати фото  обложкі</h2>
+                <input name="file" type="file" class="addPhoto" value="Обрати" />
+               </div>
+               <div class="item-icon">
+                <h2>Обрати категорію </h2>
+                <select  name="category"  >
+                  <% for (let i = 0; i < data.swiper.length; i++ ){ %>
+                  <option value="<%= data.swiper[i].category %>"><%= data.swiper[i].category %></option>
+                  <% } %>
+                </select>
+                
+               </div>
+               <div class="item-icon">
+                <h2>Додати назву альбому (ім"я учасників)</h2>
+                <input type="text">
+               </div>
+               <div class="item-icon">
+               <h2>Обрати фото  які будуть відображатись в слайдері фотосесій</h2>
+                <input name="file" type="file" class="addPhoto" value="Обрати" />
+                <button class="btnAdd">Додати</button>
+              </div>
+               
+            </div>
+
+            
+
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script>
+      // document.querySelector('.btnAdd').addEventListener('click', ()=>{
+      //   let file = document.querySelector('.addPhoto').value
+      // })
+
+      // let inputNumberPhone = document.getElementsByClassName("numberPhone")[0];
+      // let addPhoneNumberInput = document.getElementsByClassName(
+      //   "addPhoneNumberInput"
+      // )[0];
+      // let allPhoneNumbers =
+      //   document.getElementsByClassName("allPhoneNumbers")[0];
+      // addPhoneNumberInput.addEventListener("click", function () {
+      //   allPhoneNumbers.innerHTML += ` <input type="text" name="numberPhone"> `;
+      // });
+    </script>
+  </body>
+</html>
