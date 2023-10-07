@@ -58,7 +58,7 @@ let data = {
     },
     {
       name: "Mariage",
-      img: "/img/workStyle/Wed3.jpg",
+      img: "/img/workStyle/wed3.jpg",
       price: "650 €",
       form: "MINIMUM",
       info: [
