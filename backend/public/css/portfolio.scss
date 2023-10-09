@@ -12,6 +12,8 @@
       font-family: "Playfair Display", serif;
       font-weight: 500;
       font-size: 17px;
+      color: #fff;
+      text-decoration: none;
     }
 }}
 .header__burger_portfolio{
@@ -50,6 +52,7 @@
       font-weight: 600;
       margin: 20px 40px;
       opacity: 0.7;
+      list-style-type: none;
     }
   }
 }
@@ -82,11 +85,12 @@
   background-color: rgba(0, 0, 0, 0.945);
   color: white;
 }
-.portfolio-item_img {
-  // background-image: url(./img/wedding/photo_6_2023-09-19_12-13-10.jpg);
-}
-.portfolio-item_name {
-}
+// .portfolio-item_img {
+//   // background-image: url(./img/wedding/photo_6_2023-09-19_12-13-10.jpg);
+// }
+// .portfolio-item_name {
+// }
+
 
 
 @media screen and (min-width: 300px) and (max-width: 540px){
@@ -153,6 +157,7 @@
   .category-item {
     padding: 2px 5px;
     border-radius: 100px;
+    list-style-type: none;
     
   }
   .portfolio-items {
@@ -187,8 +192,8 @@ swiper-container {
       border-radius: 50%;
         border: 2px solid white;
         
-        width: 35px;
-        height: 35px;
+        width: 45px;
+        height: 45px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -201,7 +206,7 @@ swiper-container {
     .swiper-close_btn{
         color: white;
         font-weight: 500;
-        font-size: 20px;
+        font-size: 25px;
        
       }
 

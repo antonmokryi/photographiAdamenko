@@ -29,7 +29,7 @@ btnContact[i].addEventListener("click", function () {
 const swiper = new Swiper(".swiper", {
      // Optional parameters
      autoplay: {
-       delay: 5000,
+       delay: 2000,
        disableOnInteraction: false,
      },
      loop: true,
